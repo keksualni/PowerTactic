@@ -6,6 +6,9 @@ public class MouseController : MonoBehaviour
 {
     public float CameraSpeed = 20f;
     public float ScreenPadding = 10f;
+    public float ScrollSpeed = 15f;
+    public float CameraMaxYPos = 50f;
+    public float CameraMinYPos = 5f;
 
     void Update()
     {
@@ -30,6 +33,9 @@ public class MouseController : MonoBehaviour
         {
             pos.x += CameraSpeed * Time.deltaTime;
         }
+
+        pos.y -= Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed;
+        pos.y = Mathf.Clamp(pos.y, CameraMinYPos, CameraMaxYPos);
 
         transform.position = pos;
     }
