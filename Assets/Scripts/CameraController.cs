@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseController : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public float CameraSpeed = 20f;
     public float ScreenPadding = 10f;
